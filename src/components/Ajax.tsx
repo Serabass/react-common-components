@@ -2,7 +2,11 @@ import React, { useState } from "react";
 
 function fetchMock(...args: any[]) {
   return Promise.resolve({
-    data: "test"
+    json() {
+      return Promise.resolve({
+        name: "mock"
+      });
+    }
   });
 }
 
@@ -28,8 +32,9 @@ export function Ajax<T extends any = any>({
     fetchMock(url, {
       method
     })
-      .then((res) => {
-        setResponse((res as unknown) as T);
+      .then(async (res) => {
+        let json = await res.json();
+        setResponse((json as unknown) as T);
       })
       .catch((err) => {
         setError(err);
