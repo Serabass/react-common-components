@@ -1,4 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+
+function fetchMock(...args: any[]) {
+  return Promise.resolve({
+    data: "test"
+  });
+}
 
 export interface AjaxProps<T> {
   url: string;
@@ -16,30 +22,23 @@ export function Ajax<T extends any = any>({
   loadingCallback = () => <span>Loading...</span>
 }: AjaxProps<T>) {
   let [response, setResponse] = useState<T>();
-  let [loading, setLoading] = useState<boolean>(false);
   let [error, setError] = useState<any>();
 
   function refetch() {
-    setLoading(true);
-    fetch(url, {
+    fetchMock(url, {
       method
     })
       .then((res) => {
         setResponse((res as unknown) as T);
-        setLoading(false);
       })
       .catch((err) => {
-        setError((err as unknown) as T);
-        setLoading(false);
+        setError(err);
       });
   }
 
   if (!response) {
+    console.log("no response");
     refetch();
-    return loadingCallback();
-  }
-
-  if (loading) {
     return loadingCallback();
   }
 
