@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 function fetchMock(...args: any[]) {
-  return Promise.resolve({
+  return Promise.resolve<any>({
     json: () =>
       Promise.resolve({
         name: "Luke Skywalker",
