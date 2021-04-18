@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="143f78a4-1fb7-4d33-b014-dc43d4e98d65" name="Default Changelist" comment="upd">
-      <change afterPath="$PROJECT_DIR$/src/hooks/useFileReader.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/useLocalStorage.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/useStateArray.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/useStateArrayWithLocalStorage.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/example/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Ajax.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Ajax.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,7 +64,7 @@
       <recent name="M:\dev\js\react-common-components\src\hooks" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.start root">
+  <component name="RunManager" selected="npm.start">
     <configuration name="start root" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -106,7 +104,8 @@
       <workItem from="1618760856526" duration="280000" />
       <workItem from="1618761173957" duration="1813000" />
       <workItem from="1618763015637" duration="4222000" />
-      <workItem from="1618767280349" duration="2701000" />
+      <workItem from="1618767280349" duration="4102000" />
+      <workItem from="1618771425164" duration="233000" />
     </task>
     <task id="LOCAL-00001" summary="upd">
       <created>1618762099169</created>
@@ -143,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618768052694</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="upd">
+      <created>1618770021617</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1618770021617</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

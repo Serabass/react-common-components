@@ -27,7 +27,7 @@ export function Ajax<TRes extends any = any, TData extends any = any>({
   let [error, setError] = useState<Error>();
 
   function refetch() {
-    fetchMock(url, {
+    fetch(url, {
       method
     })
       .then(async (res) => {
@@ -39,15 +39,14 @@ export function Ajax<TRes extends any = any, TData extends any = any>({
       });
   }
 
-  if (!response) {
-    console.log("no response");
-    refetch();
-    return loadingCallback();
-  }
-
   if (error) {
     return errorCallback(error);
   }
 
-  return children({ response: response as any });
+  if (!response) {
+    refetch();
+    return loadingCallback();
+  }
+
+  return children({ response });
 }

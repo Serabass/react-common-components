@@ -7,7 +7,9 @@ let App = () => {
     <ErrorBoundary>
       {() => (
         <Ajax url="https://swapi.dev/api/people/1/" method="GET">
-          {({ response }) => <pre>{JSON.stringify(response, null, 4)}</pre>}
+          {({ response }) => {
+            return <pre>{JSON.stringify(response, null, 4)}</pre>;
+          }}
         </Ajax>
       )}
     </ErrorBoundary>
