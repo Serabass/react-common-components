@@ -1,1 +1,1 @@
-export * from './components/Ajax';
+export * from "./components";

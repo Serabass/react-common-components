@@ -3,9 +3,7 @@ import React, { useState } from "react";
 function fetchMock(...args: any[]) {
   return Promise.resolve({
     json() {
-      return Promise.resolve({
-        name: "mock"
-      });
+      return Promise.resolve(args);
     }
   });
 }
@@ -13,9 +11,9 @@ function fetchMock(...args: any[]) {
 export interface AjaxProps<T> {
   url: string;
   method: any;
-  errorCallback?: (error: any) => React.ReactNode;
+  errorCallback?: (error: Error) => React.ReactNode;
   loadingCallback?: () => React.ReactNode;
-  children: ({ response }: { response: T }) => any;
+  children: ({ response, refetch }: { response: T; refetch?: any }) => any;
 }
 
 export function Ajax<T extends any = any>({
@@ -26,15 +24,15 @@ export function Ajax<T extends any = any>({
   loadingCallback = () => <span>Loading...</span>
 }: AjaxProps<T>) {
   let [response, setResponse] = useState<T>();
-  let [error, setError] = useState<any>();
+  let [error, setError] = useState<Error>();
 
   function refetch() {
     fetchMock(url, {
       method
     })
       .then(async (res) => {
-        let json = await res.json();
-        setResponse((json as unknown) as T);
+        let json = (await res.json()) as T;
+        setResponse(json);
       })
       .catch((err) => {
         setError(err);
