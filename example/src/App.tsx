@@ -1,10 +1,17 @@
 import React from 'react';
-
-import { ExampleComponent } from 'react-common-components';
+import { Ajax } from 'react-common-components';
 import 'react-common-components/dist/index.css';
 
-const App = () => {
-  return <ExampleComponent text='Create React Library Example 😄' />;
+let App = () => {
+  return (
+    <Ajax url='https://swapi.dev/api/people/1/' method='GET'>
+      {
+        (() => {
+          return <div>1</div>;
+        }) as any
+      }
+    </Ajax>
+  );
 };
 
 export default App;
